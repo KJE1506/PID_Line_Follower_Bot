@@ -1,6 +1,4 @@
-// -------------------------
-// Fast PID Line Follower + Robust Fast 90° Turns (L298N + 5 IR array)
-// -------------------------
+//PID Line Following Bot using Arduino Uno
 
 // Motor Driver Pins (L298N)
 #define ENA 5    // Left Motor Speed (PWM)
@@ -31,6 +29,7 @@ const int RECENTER_MS     = 80;   // creep forward after pivot to stabilize
 const int SEARCH_COOLDOWN = 150;  // avoid instantly re-entering search after reacquiring
 
 // PID Constants
+//Adjust these parameters based on your project
 float Kp = 0.35;
 float Ki = 0.001;
 float Kd = 3.5;
@@ -38,8 +37,8 @@ float Kd = 3.5;
 // PID Variables and speeds
 int lastError = 0;
 float integral = 0;
-int baseSpeed = 65;     // min sustain speed
-int maxSpeed  = 130;    // cap speed
+int baseSpeed = 75;     // min sustain speed
+int maxSpeed  = 140;    // cap speed
 
 // Smoothing filter
 #define FILTER_SIZE 5
